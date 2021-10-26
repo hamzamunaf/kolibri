@@ -41,4 +41,24 @@ Kolibri consists of several workflows:
     First test: It makes sure that there are no duplicate files and all the path match with files types
     Second Test: It runs frontEnd tests as a pre job as well as caches all node.js Modules to make sure to it doesn't encounter any compile problems
     Third Tests : Making sure there are no dependencies are deprecated.
-4) 
+4) License Check: It consists of multiple dependent tests (setting up Node and Python). After setting up the environmet,
+   it runs the test_licenses.sh which can be found here (https://github.com/learningequality/kolibri/blob/release-v0.15.x/test/conditional/test_licenses.sh)
+5) Linting Check: Linting is the automated checking of your source code for programmatic and stylistic errors. Kolibri uses different type of linter but most of them are with Flake linting.
+
+Detailed Linting File : https://github.com/learningequality/kolibri/blob/b87f9da274a6a9218419cf9f858be695aa04304a/.pre-commit-config.yaml
+
+6) No Zombie Threads: This runs on pull requests as well as push. This make sures that there no zombie processes running where it runs the basic setup to setup the system on Ubuntu.
+                      It makes sure that there are no invalid ports active as well as processes. The system gets shutdown properly. 
+                      https://github.com/learningequality/kolibri/blob/b87f9da274a6a9218419cf9f858be695aa04304a/.github/workflows/no_zombies.yml
+
+7) PostGre Tests: It is currently disabled for forks so a developer/contributor doesn't have to worry about this one.
+8) Python2 Linting: Same linting workflow for all Python files  (Uses Flake 8 with Python to lint all python files)
+9) Python Tests: This workflow takes more time then all other workflows since it runs unit tests on each section  
+                Detailed workflow tests: It runs unit on each version of python and all operating systems as well as Postgres (Database)
+                It installs tox, sets up tox envirnoment cache, runs all the tests and then cleans up all the processes
+                All units tests can be found here: https://github.com/learningequality/kolibri/tree/release-v0.15.x/test
+10) Static dependencies with and without C extensions: Ensure that for this Python version, we can actually compile ALL files in the kolibri directory, This is the second most essential workflow action
+    It setups the staging environment where all the changes are tested throughly in Python 2.7.
+    It takes average of 4 mins to test this C extension tests. 
+
+
