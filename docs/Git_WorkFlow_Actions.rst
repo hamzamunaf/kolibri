@@ -13,9 +13,8 @@ GitHub Actions help you automate tasks within your software development life cyc
 For example, every time someone creates a pull request for a repository, you can automatically run a command that executes a software testing script.
 
 The workflow is an automated procedure that you add to your repository. Workflows are made up of one or more jobs and can be scheduled or triggered by an event.
-https://github.com/hamzamunaf/kolibri/blob/HM-dev-documentation/docs/githubworkFlow%20actions.PNG?raw=true
-<img src="githubworkFlow%20actions.PNG" alt="hi" class="inline"/>
-
+.. image:: githubworkFlow%20actions.PNG
+   :width: 600
 
 A normal workflow example looks like:
 name: learn-github-actions
