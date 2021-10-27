@@ -13,6 +13,9 @@ GitHub Actions help you automate tasks within your software development life cyc
 For example, every time someone creates a pull request for a repository, you can automatically run a command that executes a software testing script.
 
 The workflow is an automated procedure that you add to your repository. Workflows are made up of one or more jobs and can be scheduled or triggered by an event.
+https://github.com/hamzamunaf/kolibri/blob/HM-dev-documentation/docs/githubworkFlow%20actions.PNG?raw=true
+<img src="githubworkFlow%20actions.PNG" alt="hi" class="inline"/>
+
 
 A normal workflow example looks like:
 name: learn-github-actions
@@ -31,6 +34,7 @@ jobs:
 "on" means on what kind of git action it will take place, for example push, pull, fetch and etc
 "runs-on" means what type of operating system or subsystem it will run on
 "Actions" they define what type of action will be used in the job workflow
+
 
 Kolibri consists of several workflows:
 1) Build WHL file (whl file is essentially a ZIP ( . zip ) archive with a specially crafted filename that tells installers what Python versions and platforms the wheel will support. A wheel is a type of built distribution.)
